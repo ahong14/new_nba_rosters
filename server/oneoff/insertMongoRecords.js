@@ -4,7 +4,6 @@ const PlayerModel = require('../models/Player');
 const TeamModel = require('../models/Team');
 require('dotenv').config();
 
-
 const loadMongoRecords = async () => {
     await connectMongoose();
     fs.readFile('../2021-22.NBA.Roster.json', 'utf8', (err, data) => {
@@ -15,16 +14,17 @@ const loadMongoRecords = async () => {
         const players = parsedJson['players'];
         const teams = parsedJson['teams'];
 
-        players.forEach( async player => {
-            const currentPlayerModel = new PlayerModel({...player});
+        players.forEach(async player => {
+            const currentPlayerModel = new PlayerModel({ ...player });
             await currentPlayerModel.save();
         });
+        console.log('finished inserting records');
 
-        teams.forEach(async team => {
-            const currentTeamModel = new TeamModel({...team});
-            await currentTeamModel.save();
-        })
-    })
-}
+        // teams.forEach(async team => {
+        //     const currentTeamModel = new TeamModel({...team});
+        //     await currentTeamModel.save();
+        // })
+    });
+};
 
 loadMongoRecords();
