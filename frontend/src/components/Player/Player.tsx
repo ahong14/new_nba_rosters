@@ -6,7 +6,13 @@ import {
     Image,
     Stack,
     Text,
-    Button
+    Button,
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+    PopoverHeader,
+    PopoverBody,
+    PopoverArrow
 } from '@chakra-ui/react';
 import { PlayerInterface } from '../../interfaces/interfaces';
 
@@ -49,9 +55,38 @@ const Player = (props: PlayerInterface) => {
                             </Text>
                         )}
                     </Box>
-                    <Button size="lg" colorScheme="blue">
-                        View Ratings
-                    </Button>
+
+                    <Popover>
+                        <PopoverTrigger>
+                            <Button size="lg" colorScheme="blue">
+                                View Ratings
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent>
+                            <PopoverArrow />
+                            <PopoverHeader>
+                                <Text fontWeight="bold"> Player Ratings</Text>{' '}
+                            </PopoverHeader>
+                            <PopoverBody>
+                                <Text>
+                                    Defensive IQ: {props.ratings[0].diq}
+                                </Text>
+                                <Text> Dunk: {props.ratings[0].dnk}</Text>
+                                <Text> Endurance: {props.ratings[0].endu}</Text>
+                                <Text> Field Goal: {props.ratings[0].fg}</Text>
+                                <Text> Free Throw: {props.ratings[0].ft}</Text>
+                                <Text> Three Point: {props.ratings[0].tp}</Text>
+                                <Text> Inside: {props.ratings[0].ins}</Text>
+                                <Text> Jump: {props.ratings[0].jmp}</Text>
+                                <Text>
+                                    Offensive IQ: {props.ratings[0].oiq}
+                                </Text>
+                                <Text> Rebound: {props.ratings[0].reb}</Text>
+                                <Text> Speed: {props.ratings[0].spd}</Text>
+                                <Text> Strength: {props.ratings[0].stre}</Text>
+                            </PopoverBody>
+                        </PopoverContent>
+                    </Popover>
                 </Box>
             </Stack>
         </Container>

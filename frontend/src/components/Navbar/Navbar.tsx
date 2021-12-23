@@ -52,6 +52,9 @@ const Navbar = () => {
             mb={8}
             p={8}
             color="white"
+            position="sticky"
+            zIndex="999"
+            top="0"
         >
             <Stack spacing={20} align="center" justify="center" direction="row">
                 <Box>
@@ -71,14 +74,25 @@ const Navbar = () => {
                     <MenuButton as={Text} fontSize="lg" fontWeight="bold">
                         Teams
                     </MenuButton>
-                    <MenuList>{teamsMenuItems}</MenuList>
+                    <MenuList
+                        maxW="600px"
+                        display="flex"
+                        flexDirection="row"
+                        flexWrap="wrap"
+                        overflow="auto"
+                        maxH="600px"
+                    >
+                        {teamsMenuItems}
+                    </MenuList>
                 </Menu>
-                <Link
-                    to="/players"
-                    style={{ color: 'inherit', textDecoration: 'inherit' }}
-                >
-                    <h4> Players </h4>
-                </Link>
+                <Text fontSize="lg" fontWeight="bold">
+                    <Link
+                        to="/players"
+                        style={{ color: 'inherit', textDecoration: 'inherit' }}
+                    >
+                        Players
+                    </Link>
+                </Text>
             </Stack>
         </Flex>
     );

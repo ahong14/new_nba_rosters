@@ -1,4 +1,4 @@
-import { Flex, Heading, Stack } from '@chakra-ui/react';
+import { Flex, Heading, Stack, Spinner } from '@chakra-ui/react';
 import { useQuery, gql } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { PlayerInterface } from '../../interfaces/interfaces';
@@ -58,10 +58,17 @@ const TeamsPage = () => {
             : [];
     return (
         <Flex direction="column" justifyContent="space-between">
-            <Stack align="center">
-                <Heading> Players </Heading>
-                {playerItems}
-            </Stack>
+            {loading ? (
+                <Stack align="center">
+                    <Heading> Loading players </Heading>
+                    <Spinner align="center" size="xl" />
+                </Stack>
+            ) : (
+                <Stack align="center">
+                    <Heading> Players </Heading>
+                    {playerItems}
+                </Stack>
+            )}
         </Flex>
     );
 };

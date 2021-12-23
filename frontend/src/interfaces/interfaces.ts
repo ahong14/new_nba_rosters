@@ -15,7 +15,7 @@ export interface PlayerInterface {
     name: string;
     jerseyNumber?: number;
     tid?: number;
-    ratings: Array<unknown>;
+    ratings: Array<PlayerRatings>;
     pos: string;
     born: object;
     imgURL: string;
@@ -32,4 +32,19 @@ export interface PlayerDraft {
     round: number;
     tid: number;
     year: number;
+}
+
+export interface PlayerRatings {
+    diq: number;
+    dnk: number;
+    endu: number;
+    fg: number;
+    ft: number;
+    ins: number;
+    jmp: number;
+    oiq: number;
+    reb: number;
+    spd: number;
+    stre: number;
+    tp: number;
 }

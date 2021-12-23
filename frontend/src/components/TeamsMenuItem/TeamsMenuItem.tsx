@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const TeamsMenuItem = (props: TeamsInterface) => {
     return (
-        <MenuItem bg="white">
+        <MenuItem bg="white" width="33%">
             <Link to={`/teams/${props.tid}`}>
                 <Image
                     src={props.imgURLSmall}
