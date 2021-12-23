@@ -35,6 +35,12 @@ const getAllPlayersByTeam = gql`
                 originalTid
                 tid
             }
+            hgt
+            weight
+            awards {
+                season
+                type
+            }
         }
     }
 `;
@@ -80,6 +86,9 @@ const TeamsPage = () => {
                               draft={player.draft}
                               college={player.college}
                               stats={player.stats}
+                              awards={player.awards}
+                              hgt={player.hgt}
+                              weight={player.weight}
                           />
                       );
                   }
@@ -97,8 +106,9 @@ const TeamsPage = () => {
                     border="1px"
                     borderRadius="10px"
                     borderColor="gray"
-                    width="100vw"
                     justifyContent="space-between"
+                    w="1200px"
+                    maxW="xlg"
                 >
                     <Stack align="center">
                         <TeamInfo

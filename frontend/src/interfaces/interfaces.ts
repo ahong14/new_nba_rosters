@@ -24,6 +24,9 @@ export interface PlayerInterface {
     draft: PlayerDraft;
     college: string;
     stats: Array<unknown>;
+    hgt: number;
+    weight: number;
+    awards: Array<PlayerAward>;
 }
 
 export interface PlayerDraft {
@@ -47,4 +50,9 @@ export interface PlayerRatings {
     spd: number;
     stre: number;
     tp: number;
+}
+
+export interface PlayerAward {
+    season: number;
+    type: string;
 }

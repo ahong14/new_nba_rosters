@@ -14,9 +14,17 @@ const loadMongoRecords = async () => {
         const players = parsedJson['players'];
         const teams = parsedJson['teams'];
 
-        players.forEach(async player => {
-            const currentPlayerModel = new PlayerModel({ ...player });
-            await currentPlayerModel.save();
+        players.forEach(async (player) => {
+            if (!player.name && player.firstName && player.lastName) {
+                const currentPlayerModel = new PlayerModel({
+                    ...player,
+                    name: `${player.firstName} ${player.lastName}`
+                });
+                await currentPlayerModel.save();
+            } else {
+                const currentPlayerModel = new PlayerModel({ ...player });
+                await currentPlayerModel.save();
+            }
         });
         console.log('finished inserting records');
 

@@ -18,7 +18,10 @@ const schema = buildSchema(`
         contract: String,
         transactions: [PlayerTransaction],
         draft: PlayerDraft,
-        college: String
+        college: String,
+        hgt: Int,
+        weight: Int,
+        awards: [PlayerAward]
     },
     type Team {
         tid: Int,
@@ -62,6 +65,10 @@ const schema = buildSchema(`
         tid: Int,
         type: String,
         pickNum: Int
+    }
+    type PlayerAward {
+        season: Int,
+        type: String
     }
 `);
 

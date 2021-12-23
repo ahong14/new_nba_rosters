@@ -32,7 +32,10 @@ const NbaPlayer = new Schema({
     transactions: Array,
     draft: Schema.Types.Mixed,
     college: String,
-    stats: Array
+    stats: Array,
+    awards: Array,
+    hgt: Number,
+    weight: Number
 });
 
 module.exports = mongoose.model('nbaplayers', NbaPlayer);

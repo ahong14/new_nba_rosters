@@ -18,7 +18,7 @@ const TeamInfo = (props: TeamsInterface) => {
                 <Heading alignSelf="center">
                     {props.region} {props.name} ({props.abbrev})
                 </Heading>
-                <Image src={props.imgURL} boxSize="280px" alt="team image" />
+                <Image src={props.imgURL} boxSize="220px" alt="team image" />
                 <Text>
                     <strong>Population: </strong> {props.pop}M
                 </Text>
@@ -29,9 +29,7 @@ const TeamInfo = (props: TeamsInterface) => {
                     <Text>
                         <strong> Colors: </strong>
                     </Text>
-                    <Stack direction="row">
-                        { teamColors }
-                    </Stack>
+                    <Stack direction="row">{teamColors}</Stack>
                 </Stack>
             </Box>
         </Container>
