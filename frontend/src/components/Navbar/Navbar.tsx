@@ -28,10 +28,10 @@ const Navbar = () => {
     const { loading, data, error } = useQuery(getAllTeams);
     const teamsMenuItems =
         data && data.allTeams
-            ? data.allTeams.map((team: TeamsInterface) => {
+            ? data.allTeams.map((team: TeamsInterface, index: number) => {
                   return (
                       <TeamsMenuItem
-                          key={team.tid}
+                          key={team.tid + `_${index}`}
                           imgURLSmall={team.imgURLSmall}
                           region={team.region}
                           name={team.name}
@@ -81,6 +81,8 @@ const Navbar = () => {
                         flexWrap="wrap"
                         overflow="auto"
                         maxH="600px"
+                        borderColor="gray"
+                        borderRadius="10px"
                     >
                         {teamsMenuItems}
                     </MenuList>

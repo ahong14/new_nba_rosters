@@ -12,7 +12,7 @@ const TeamsMenuItem = (props: TeamsInterface) => {
                     boxSize="100px"
                     alt="Team Logo"
                 />
-                <Text color="black" align="center">
+                <Text color="black" align="center" fontWeight="bold">
                     {props.region} {props.name}
                 </Text>
             </Link>

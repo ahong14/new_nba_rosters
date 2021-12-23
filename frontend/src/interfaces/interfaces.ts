@@ -1,7 +1,7 @@
 export interface TeamsInterface {
-    tid?: number;
-    region?: string;
-    name?: string;
+    tid: number;
+    region: string;
+    name: string;
     abbrev?: string;
     pop?: number;
     strategy?: string;
