@@ -25,10 +25,10 @@ const schema = buildSchema(`
         region: String,
         name: String,
         abbrev: String,
-        pop: Int,
+        pop: Float,
         strategy: String,
         stadiumCapacity: Int,
-        colors: String,
+        colors: [String],
         imgURL: String,
         imgURLSmall: String
     },

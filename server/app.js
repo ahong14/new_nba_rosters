@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
+const cors = require('cors');
 const connectMongo = require('./dbconfig/mongo.js');
 // graphql
 const root = require('./graphql/resolvers/root_resolver');
@@ -14,6 +15,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(morgan('combined'));
+app.use(cors());
 
 app.use(
     '/graphql',

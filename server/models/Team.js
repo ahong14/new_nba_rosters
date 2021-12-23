@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 /**
  * {"tid":14,"cid":1,"did":3,
 "region":"Memphis","name":"Grizzlies","abbrev":"MEM","pop":1.3,"strategy":"rebuilding",
@@ -14,17 +13,17 @@ const Schema = mongoose.Schema;
 "imgURLSmall":"https://i.imgur.com/mRTBrVV.png"}
  */
 
- const NbaTeam = new Schema({
-     tid: Number,
-     region: String,
-     name: String,
-     abbrev: String,
-     pop: Number,
-     strategy: String,
-     stadiumCapacity: Number,
-     colors: Array,
-     imgURL: String,
-     imgURLSmall: String
- });
+const NbaTeam = new Schema({
+    tid: Number,
+    region: String,
+    name: String,
+    abbrev: String,
+    pop: Number,
+    strategy: String,
+    stadiumCapacity: Number,
+    colors: Array,
+    imgURL: String,
+    imgURLSmall: String
+});
 
- module.exports = mongoose.model("nbateams", NbaTeam);
+module.exports = mongoose.model('nbateams', NbaTeam);
