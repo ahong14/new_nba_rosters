@@ -7,14 +7,16 @@ class ElasticsearchService {
         });
     }
 
-    async queryElasticSearch(query) {
+    async queryElasticSearch(query, fromPosition = 0) {
         try {
             // Example query: { bool: { must: [{ match: { name: 'Otto' } }] } }
             const results = await this.searchClient.search({
                 index: 'players_index',
                 body: {
                     query: query
-                }
+                },
+                from: fromPosition,
+                size: 20
             });
             let searchResults = results.hits.hits || [];
             searchResults = searchResults.map((result) => {

@@ -7,6 +7,7 @@ import { UPDATE_TEAMS } from './store/actions';
 import Navbar from './components/Navbar/Navbar';
 import HomePage from './components/HomePage/HomePage';
 import TeamsPage from './components/TeamsPage/TeamsPage';
+import SearchPlayers from './components/SearchPlayers/SearchPlayers';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 import './App.css';
@@ -45,6 +46,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/teams/:teamid" element={<TeamsPage />} />
+                    <Route path="/players" element={<SearchPlayers />} />
                 </Routes>
             </ScrollToTop>
         </Router>

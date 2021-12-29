@@ -29,7 +29,8 @@ const getAllTeams = async () => {
 const getSearchResults = async (args) => {
     const elasticsearchService = new ElasticsearchService();
     const searchResults = await elasticsearchService.queryElasticSearch(
-        JSON.parse(args.query)
+        JSON.parse(args.query),
+        args.from
     );
     return searchResults || [];
 };
