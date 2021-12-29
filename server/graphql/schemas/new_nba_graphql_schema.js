@@ -5,7 +5,8 @@ const schema = buildSchema(`
         allPlayers: [Player],
         allActivePlayers: [Player],
         allPlayersByTeam(teamid: Int!): [Player],
-        allTeams: [Team]
+        allTeams: [Team],
+        querySearch(query: String!): [Player]
     },
     type Player {
         name: String,
